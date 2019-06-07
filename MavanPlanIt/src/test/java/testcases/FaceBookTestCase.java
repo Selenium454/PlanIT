@@ -32,7 +32,7 @@ public class FaceBookTestCase extends FaceBooklibraries {
 		Object[][] data = FaceBookTestData.getInputdata(Constants.exceldata, "Sheet1");
 		return data;
 	}
-
+   // Passing Parameter values to test methods using @DataProvider and Xlsx
 	@Test(dataProvider = "Signin")
 	public void SignIn(String FirstName, String SurName, String Email, String ConfirmEmail, String Password, String Day,
 			String Month, String Year) {
@@ -51,6 +51,7 @@ public class FaceBookTestCase extends FaceBooklibraries {
 
 			Assert.assertTrue(true, "Sharma");
 		}
+		//Code to generate and pass random email 
 		input(facebook.getEmail(), randomEmail, "Email");
 		input(facebook.getConfirmEmail(), randomEmail, "Email");
 		input(facebook.getPassword(), Password, "Password");
@@ -61,11 +62,13 @@ public class FaceBookTestCase extends FaceBooklibraries {
 		click(facebook.getGender(), "Clicked on Female radio button");
 		click(facebook.getSignUp(), "Clicked on Sign Up button");
 		delay(2000);
-
+		
+        //To Check error generation upon supplying incorrect email 
+		
 		String Actual_Result = "You have entered an invalid email address. Please check your email address and try again.";
 
 		String Expected_Result = driver.findElement(By.xpath("//div[@id='reg_error']/div")).getText();
-
+				
 		Assert.assertEquals(Actual_Result, Expected_Result);
 
 		System.out.println(Expected_Result);
