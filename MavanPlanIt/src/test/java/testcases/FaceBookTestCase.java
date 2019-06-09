@@ -51,7 +51,9 @@ public class FaceBookTestCase extends FaceBooklibraries {
 
 			Assert.assertTrue(true, "Sharma");
 		}
+		
 		//Code to generate and pass random email 
+		
 		input(facebook.getEmail(), randomEmail, "Email");
 		input(facebook.getConfirmEmail(), randomEmail, "Email");
 		input(facebook.getPassword(), Password, "Password");
@@ -74,5 +76,25 @@ public class FaceBookTestCase extends FaceBooklibraries {
 		System.out.println(Expected_Result);
 
 	}
+	/* Happy Path Scenario with xls data
+	 
+	  @Test(dataProvider="Signin")
+	public void SignIn(String FirstName,String SurName,String Email,String ConfirmEmail,String Password,String Day,String Month,String Year) {
+		
+	      input(facebook.getFirstName(),FirstName,"Email");
+		//input(facebook.getFirstName(),data.get("FirstName"),"Firstname");
+		input(facebook.getSurName(),SurName, "Email");
+		input(facebook.getEmail(),Email,"email" );
+		input(facebook.getConfirmEmail(),ConfirmEmail,"ConfirmEmail");
+		input(facebook.getPassword(), Password, "Password");
+		selectByValue(facebook.getDay(),Day,"Day Entered");
+		selectByValue(facebook.getMonth(),Month,"month Entered");
+		selectByValue(facebook.getYear(),Year,"Year entered");
+		delay(2000);
+		click(facebook.getGender(),"Clicked on Female radio button");
+	 click(facebook.getSignUp(), "Clicked on Sign Up button");
+					
+	}
+	 */
 
 }
